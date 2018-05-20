@@ -183,6 +183,8 @@ class BackyardFlyer(Drone):
         self.stop()
         self.in_mission = False
         self.flight_state = States.MANUAL
+        originDistance = 100*np.linalg.norm(self.local_position) # vector norm from numpy
+        print(f'Distance to origin : {originDistance:5.3f} cm')
 
     def start(self):
         """This method is provided
